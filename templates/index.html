@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+</head>
+<body>
+  <div class="topnav">
+    <a href="{% url 'index' %}">Home</a>
+    <a href="#">Video</a>
+    <a href="#">Movies</a>
+    <a href="#">About Us</a>
+  </div>
+  {% for item in di %}
+  <video id="my video" class="video_js" controlspreload="auto" width="485" height="360" muted="true"
+  data_setup="()">
+  <source src="{{item.file.url}}" type="video/mp4">
+  </video>
+  {% endfor %}
+</body>
+</html>
